@@ -1,6 +1,6 @@
 import { Card, Fusion } from '@/helpers/cards'
 import { Tag } from 'antd'
-import { uniq, uniqBy } from 'lodash'
+import { uniqBy } from 'lodash'
 import Link from 'next/link'
 import React from 'react'
 

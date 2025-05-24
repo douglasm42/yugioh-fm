@@ -1,4 +1,4 @@
-import { Card, cards } from '@/helpers/cards'
+import { cards } from '@/helpers/cards'
 import { Select } from 'antd'
 import React from 'react'
 

@@ -1,5 +1,4 @@
-import { Card, cardsIndex, Fusion } from '@/helpers/cards'
-import Link from 'next/link'
+import { cardsIndex } from '@/helpers/cards'
 import { useSearchParams } from 'next/navigation'
 import React from 'react'
 import GuardianStar from './GuardianStar'

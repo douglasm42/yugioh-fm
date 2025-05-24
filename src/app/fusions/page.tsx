@@ -1,11 +1,10 @@
 'use client'
 
-import DropsTable from "@/components/DropsTable"
 import FusionsList from "@/components/FusionsList"
 import SelectCard from "@/components/SelectCard"
 import { forEachCombination } from "@/helpers/array"
-import { Card, cards, cardsIndex, Fusion, fusions } from "@/helpers/cards"
-import { Flex, Input, Select } from "antd"
+import { Card, cardsIndex, Fusion } from "@/helpers/cards"
+import { Flex } from "antd"
 import Head from "next/head"
 import { useState } from "react"
 
