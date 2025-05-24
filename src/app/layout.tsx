@@ -1,6 +1,10 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import { ConfigProvider, Layout, Menu, theme } from "antd";
+import { Content, Footer, Header } from "antd/es/layout/layout";
+import Link from "next/link";
+import ThemeProvider from "@/components/ThemeProvider";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -24,10 +28,48 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <link href="data:image/x-icon;base64,AAABAAEAEBAQAAEABAAoAQAAFgAAACgAAAAQAAAAIAAAAAEABAAAAAAAgAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAACJfUAAtyngAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIiIiIiIAAAIRERERESAAAhERERERIAACEREREREgAAIREQARESAAAhEQAAERIAACERAAAREgAAIREAABESAAAhEQAAERIAACERAAAREgAAIREAABESAAAhERABERIAACEREREREgAAIRERERESAAAhERERERIAAAIiIiIiIADgBwAAwAMAAMADAADAAwAAwAMAAMADAADAAwAAwAMAAMADAADAAwAAwAMAAMADAADAAwAAwAMAAMADAADgBwAA" rel="icon" type="image/x-icon"></link>
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        style={{margin: 0, backgroundColor: 'black'}}
       >
-        {children}
+        <ThemeProvider>
+          <Layout>
+            <Header style={{ display: 'flex', alignItems: 'center' }}>
+              <Menu
+                theme="dark"
+                mode="horizontal"
+                defaultSelectedKeys={['2']}
+                items={[
+                  { key: 'home', label: (<Link href='/'>Home</Link>) },
+                  { key: 'drops', label: (<Link href='/drops'>Drops</Link>) },
+                  { key: 'cards', label: (<Link href="/cards">Cards</Link>) },
+                  { key: 'fusions', label: (<Link href="/fusions">Fusions</Link>) },
+                ]}
+                style={{ flex: 1, minWidth: 0 , maxWidth: '1200px',
+                margin: '0 auto',}}
+              />
+            </Header>
+            <Content style={{ padding: '0 48px' }}>
+              <div
+                style={{
+                  minHeight: 280,
+                  maxWidth: '1200px',
+                  margin: '0 auto',
+                  padding: 24,
+                  borderRadius: 5,
+                }}
+              >
+                {children}
+              </div>
+            </Content>
+            <Footer style={{ textAlign: 'center' }}>
+              ©{new Date().getFullYear()} Created by Douglas
+            </Footer>
+          </Layout>
+        </ThemeProvider>
       </body>
     </html>
   );
