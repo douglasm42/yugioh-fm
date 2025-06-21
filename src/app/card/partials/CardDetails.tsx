@@ -1,21 +1,15 @@
-import { cardsIndex } from '@/helpers/cards'
-import { useSearchParams } from 'next/navigation'
+import { Card } from '@/helpers/cards'
 import React from 'react'
-import GuardianStar from './GuardianStar'
 import { Flex } from 'antd'
-import FusionsList from './FusionsList'
 import Head from 'next/head'
+import GuardianStar from '@/components/GuardianStar'
+import FusionsList from '@/components/FusionsList'
 
-export default function CardDetails() {
-  const searchParams = useSearchParams()
- 
-  const id: string | null = searchParams.get('id')
-  if(!id) {
-    return (<div>Not Found!</div>)
-  }
+interface CardDetailsProps {
+  card: Card
+}
 
-  const card = cardsIndex[Number.parseInt(id)]
-
+export default function CardDetails({ card }: CardDetailsProps) {
   return (
     <div>
       <Head>
