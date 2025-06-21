@@ -1,0 +1,40 @@
+.table {
+  width: 100%;
+  min-width: 800px;
+  border-collapse: collapse;
+}
+
+.table td {
+  text-align: left;
+  padding: 0.2em 0;
+}
+
+.table tbody tr:hover {
+  background-color: var(--color-gray6);
+}
+
+.table th {
+  text-align: left;
+  padding: 0.3em 0;
+  font-weight: bold;
+}
+
+.table-header {
+  font-weight: bold;
+  border-bottom: 2px solid var(--color-gray6);
+}
+
+.table-column-header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 0.9em 0 0;
+}
+
+.table-column-header-actions-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 0.9em 0 0;
+}
+

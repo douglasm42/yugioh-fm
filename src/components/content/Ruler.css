@@ -1,0 +1,5 @@
+.ruler {
+  border-bottom: 2px solid var(--color-gray6);
+  width: 100%;
+  margin: 15px 0;
+}

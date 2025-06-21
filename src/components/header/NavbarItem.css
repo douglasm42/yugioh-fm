@@ -1,0 +1,31 @@
+.navbar-item {
+  padding: 5px;
+}
+
+.navbar-item-link {
+  display: block;
+  width: 150px;
+  padding: 1px 5px 3px 5px;
+  border: none;
+  border-bottom: 2px solid var(--color-yellow);
+  color: var(--color-yellow);
+  text-decoration: none;
+  text-align: center;
+  font-size: 24px;
+  font-family: var(--font-roboto-mono), monospace;
+
+  background: inherit;
+  line-height: normal;
+  -webkit-font-smoothing: inherit;
+  -moz-osx-font-smoothing: inherit;
+  -webkit-appearance: none;
+}
+
+.navbar-item-link:visited {
+  color: var(--color-yellow);
+}
+
+.navbar-item-link:hover {
+  color: var(--color-lblue);
+  border-bottom: 2px solid var(--color-lblue);
+}

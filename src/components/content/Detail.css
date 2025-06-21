@@ -1,0 +1,13 @@
+.detail {
+  display: flex;
+  width: 100%;
+  margin-top: 5px;
+}
+.detail-name {
+  width: 33%;
+  padding-right: 15px;
+  text-align: right;
+}
+.detail-value {
+  width: 67%;
+}

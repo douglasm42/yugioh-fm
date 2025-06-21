@@ -1,0 +1,113 @@
+.button {
+  display: inline-block;
+  padding: 0.2em;
+  border-radius: 0.3em;
+  border-style: solid;
+  border-width: 1px;
+  font-size: 0.8em;
+  vertical-align: middle;
+  margin: 0 0.2em;
+}
+
+.button[data-color="black"] {
+  color: var(--color-black);
+  background-color: var(--color-black);
+  border-color: var(--color-black);
+}
+
+.button[data-color="dark"] {
+  color: var(--color-dark);
+  background-color: var(--color-dark);
+  border-color: var(--color-dark);
+}
+
+.button[data-color="gray6"] {
+  color: var(--color-gray6);
+  background-color: var(--color-gray6);
+  border-color: var(--color-gray6);
+}
+
+.button[data-color="gray5"] {
+  color: var(--color-gray5);
+  background-color: var(--color-gray5);
+  border-color: var(--color-gray5);
+}
+
+.button[data-color="gray4"] {
+  color: var(--color-gray4);
+  background-color: var(--color-gray4);
+  border-color: var(--color-gray4);
+}
+
+.button[data-color="gray3"] {
+  color: var(--color-gray3);
+  background-color: var(--color-gray3);
+  border-color: var(--color-gray3);
+}
+
+.button[data-color="gray2"] {
+  color: var(--color-gray2);
+  background-color: var(--color-gray2);
+  border-color: var(--color-gray2);
+}
+
+.button[data-color="gray1"] {
+  color: var(--color-gray1);
+  background-color: var(--color-gray1);
+  border-color: var(--color-gray1);
+}
+
+.button[data-color="white"] {
+  color: var(--color-white);
+  background-color: var(--color-white);
+  border-color: var(--color-white);
+}
+
+.button[data-color="red"] {
+  color: var(--color-red);
+  background-color: var(--color-red);
+  border-color: var(--color-red);
+}
+
+.button[data-color="orange"] {
+  color: var(--color-orange);
+  background-color: var(--color-orange);
+  border-color: var(--color-orange);
+}
+
+.button[data-color="yellow"] {
+  color: var(--color-yellow);
+  background-color: var(--color-yellow);
+  border-color: var(--color-yellow);
+}
+
+.button[data-color="green"] {
+  color: var(--color-green);
+  background-color: var(--color-green);
+  border-color: var(--color-green);
+}
+
+.button[data-color="lblue"] {
+  color: var(--color-lblue);
+  background-color: hsl(from var(--color-lblue) h s 10%);
+  border-color: hsl(from var(--color-lblue) h s 15%);
+}
+
+.button[data-color="blue"] {
+  color: var(--color-blue);
+  background-color: var(--color-blue);
+  border-color: var(--color-blue);
+}
+
+.button[data-color="purple"] {
+  color: var(--color-purple);
+  background-color: var(--color-purple);
+  border-color: var(--color-purple);
+}
+
+.button[data-color="pink"] {
+  color: var(--color-pink);
+  background-color: var(--color-pink);
+  border-color: var(--color-pink);
+}
+

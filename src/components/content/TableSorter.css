@@ -1,0 +1,20 @@
+.table-sorter-unset {
+  color: var(--color-white)
+}
+.table-sorter-unset:hover {
+  color: var(--color-gray1)
+}
+
+.table-sorter-set {
+  color: var(--color-blue)
+}
+.table-sorter-set:hover {
+  color: var(--color-lblue)
+}
+
+.table-sorter-button {
+  cursor: pointer;
+  display: block;
+  width: 1em;
+  height: 1em;
+}

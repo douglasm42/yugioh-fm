@@ -1,0 +1,24 @@
+.navbar {
+  display: flex;
+  justify-content: flex-end;
+  background-color: var(--color-dark);
+  width: 100%;
+  box-shadow: 0 1px 10px var(--color-dark);
+}
+
+.navbar-items {
+  display: flex;
+  margin: 0 auto;
+  justify-content: center;
+}
+
+@media screen and (max-width: 655px) {
+  .navbar-items {
+    display: none;
+    margin: 0 auto;
+  }
+
+  .navbar-show {
+    display: block;
+  }
+}

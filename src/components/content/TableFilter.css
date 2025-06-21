@@ -1,0 +1,14 @@
+.table-filter {
+  margin: 0 0.2em;
+  position: relative;
+}
+
+.table-filter-button {
+  cursor: pointer;
+  width: 1em;
+  height: 1em;
+}
+
+.table-filter-is-set {
+  color: var(--color-lblue)
+}

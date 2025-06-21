@@ -1,0 +1,8 @@
+.skill-root {
+  padding: 15px;
+}
+
+.skill-container {
+  display: flex;
+  justify-content: space-between;
+}

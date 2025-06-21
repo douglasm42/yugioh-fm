@@ -1,0 +1,17 @@
+.tag {
+  color: var(--color-dark);
+  display: inline-block;
+  padding: 0.2em;
+  border-radius: 0.3em;
+}
+
+.tag-sup {
+  font-size: 0.4em;
+  vertical-align: super;
+}
+
+.tag-middle {
+  font-size: 0.8em;
+  vertical-align: middle;
+  margin: 0 0.2em;
+}

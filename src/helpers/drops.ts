@@ -9,7 +9,7 @@ interface DropInput {
   type: string
   atk?: number
   def?: number
-  chance: string
+  chance: number
 }
 
 export class Drop {
@@ -20,7 +20,7 @@ export class Drop {
   type: string
   atk?: number
   def?: number
-  chance: string
+  chance: number
 
   constructor({ rating, duelist, name, type, atk, def, chance }: DropInput) {
     this.rating = rating

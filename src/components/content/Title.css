@@ -1,0 +1,53 @@
+.title-h1 {
+  margin: 0;
+  margin-bottom: 15px;
+  text-align: center;
+  font-size: 35px;
+  color: var(--color-purple);
+}
+
+.title-h2 {
+  margin: 0;
+  margin-bottom: 15px;
+  text-align: start;
+  border-bottom: 2px solid var(--color-gray6);
+  font-size: 30px;
+  color: var(--color-purple);
+}
+
+.title-h3 {
+  margin: 0;
+  margin-bottom: 15px;
+  text-align: start;
+  border-bottom: 2px solid var(--color-gray6);
+  font-size: 25px;
+  color: var(--color-purple);
+}
+
+.title-h4 {
+  margin: 0;
+  margin-bottom: 15px;
+  text-align: start;
+  border-bottom: 2px solid var(--color-gray6);
+  font-size: 23px;
+  color: var(--color-purple);
+}
+
+.title-h5 {
+  margin: 0;
+  margin-bottom: 15px;
+  text-align: start;
+  border-bottom: 2px solid var(--color-gray6);
+  font-size: 21px;
+  color: var(--color-purple);
+}
+
+.title-h6 {
+  margin: 0;
+  margin-bottom: 15px;
+  text-align: start;
+  border-bottom: 2px solid var(--color-gray6);
+  font-size: 19px;
+  color: var(--color-purple);
+}
+

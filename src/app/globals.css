@@ -1,0 +1,69 @@
+:root {
+  --color-black:  hsl(0, 0%, 0%);
+  --color-dark:   hsl(0, 0%, 18%);
+  --color-gray6:  hsl(0, 0%, 22%);
+  --color-gray5:  hsl(0, 0%, 32%);
+  --color-gray4:  hsl(0, 0%, 47%);
+  --color-gray3:  hsl(120, 2%, 71%);
+  --color-gray2:  hsl(0, 0%, 80%);
+  --color-gray1:  hsl(0, 0%, 88%);
+  --color-white:  hsl(0, 0%, 100%);
+  --color-red:    hsl(0, 59%, 57%);
+  --color-orange: hsl(30, 93%, 66%);
+  --color-yellow: hsl(37, 100%, 71%);
+  --color-green:  hsl(78, 44%, 57%);
+  --color-lblue:  hsl(218, 100%, 87%);
+  --color-blue:   hsl(206, 37%, 58%);
+  --color-purple: hsl(293, 46%, 72%);
+  --color-pink:   hsl(345, 92%, 71%);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-image: url("/background-img.jpg"); /* The image used */
+  background-position: bottom center; /* Center the image */
+  background-repeat: no-repeat; /* Do not repeat the image */
+  background-size: auto 1200px; /* Resize the background image to cover the entire container */
+  background-color: #3a4557;
+  color: #fff;
+  font-family: var(--font-lato), sans-serif;
+  min-height: 100vh;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+a {
+  color: var(--color-blue);
+}
+
+.container {
+  margin: 0 auto;
+}
+
+.overflow-x {
+  overflow-x: auto;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-end {
+  text-align: end;
+}
+
+.text-start {
+  text-align: start;
+}

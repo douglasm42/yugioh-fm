@@ -1,0 +1,37 @@
+.navbar-toggle {
+  display: none;
+}
+
+.navbar-toggle-link {
+  display: block;
+  padding: 1px 5px 3px 5px;
+  border: none;
+  border-bottom: 2px none;
+  color: var(--color-yellow);
+  text-decoration: none;
+  text-align: center;
+  font-size: 24px;
+  font-family: var(--font-roboto-mono), monospace;
+
+  background: inherit;
+  line-height: normal;
+  -webkit-font-smoothing: inherit;
+  -moz-osx-font-smoothing: inherit;
+  -webkit-appearance: none;
+}
+
+.navbar-toggle-link:visited {
+  color: var(--color-yellow);
+}
+
+.navbar-toggle-link:hover {
+  color: var(--color-lblue);
+}
+
+@media screen and (max-width: 655px) {
+  .navbar-toggle {
+    display: block;
+    padding: 5px;
+    float: right;
+  }
+}

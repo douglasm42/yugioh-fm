@@ -1,0 +1,10 @@
+.context-menu {
+  position: absolute;
+  display: none;
+  background-color: var(--color-gray5);
+  padding: 1em;
+}
+
+.context-menu-active {
+  display: block;
+}
