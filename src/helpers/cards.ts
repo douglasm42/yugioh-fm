@@ -162,7 +162,8 @@ export class Card {
   level: number
   atk?: number
   def?: number
-  cost: number
+  cost?: number
+  modCost?: number
   code?: string
   fusions: Fusion[]
 
@@ -176,8 +177,9 @@ export class Card {
     this.level = card.Level
     this.atk = magicTypes.includes(this.type) ? undefined : card.Attack
     this.def = magicTypes.includes(this.type) ? undefined : card.Defense
-    this.cost = modCosts[this.id] as number
     this.code = card.CardCode === '00000000' ? undefined : card.CardCode
+    this.cost = this.code ? card.Stars : undefined
+    this.modCost = this.code ? modCosts[this.id] as number : undefined
     this.fusions = fusions.filter( fusion => fusion.takesPart(this) )
   }
 

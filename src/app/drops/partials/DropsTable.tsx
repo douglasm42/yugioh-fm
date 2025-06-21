@@ -5,8 +5,8 @@ import Table, { TableColumn } from '@/components/content/Table';
 import Tag from '@/components/content/Tag';
 import { Color } from '@/components/types';
 import { SetFilterFunction } from '@/components/content/TableFilter';
-import StringFilter from './filters/StringFilter';
-import OptionsFilter from './filters/OptionsFilter';
+import StringFilter from '@/components/filters/StringFilter';
+import OptionsFilter from '@/components/filters/OptionsFilter';
 
 const columns: TableColumn<Drop>[] = [
   {

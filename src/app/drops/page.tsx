@@ -4,7 +4,6 @@ import Card from "@/components/content/Card"
 import Ruler from "@/components/content/Ruler"
 import Title from "@/components/content/Title"
 import DropsTable from "@/app/drops/partials/DropsTable"
-import { Input } from "antd"
 import { useState } from "react"
 
 export default function DropsPage() {

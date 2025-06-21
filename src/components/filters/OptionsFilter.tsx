@@ -1,22 +1,21 @@
 import { SetFilterFunction } from '@/components/content/TableFilter'
-import { Drop } from '@/helpers/drops'
-import React, { ChangeEventHandler, useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 
 import './OptionsFilter.css'
 
-interface OptionsFilterProps {
+interface OptionsFilterProps<T> {
   key: string
-  getField: (drop: Drop) => string
-  setFilter: SetFilterFunction<Drop>
+  getField: (drop: T) => string
+  setFilter: SetFilterFunction<T>
   options: string[]
 }
 
-export default function OptionsFilter({ key, getField, setFilter, options }: OptionsFilterProps) {
+export default function OptionsFilter<T>({ key, getField, setFilter, options }: OptionsFilterProps<T>) {
   const [selected, setSelected] = useState<string[]>([])
 
   useEffect(() => {
     if(selected.length > 0) {
-      setFilter(key, (drop: Drop) => selected.includes(getField(drop)))
+      setFilter(key, (drop: T) => selected.includes(getField(drop)))
     } else {
       setFilter(key, undefined)
     }

@@ -1,21 +1,20 @@
 import { SetFilterFunction } from '@/components/content/TableFilter'
-import { Drop } from '@/helpers/drops'
 import React, { useEffect, useState } from 'react'
 
-interface StringFilterProps {
+interface StringFilterProps<T> {
   key: string
-  getField: (drop: Drop) => string
+  getField: (drop: T) => string
   placeholder: string
   label: string
-  setFilter: SetFilterFunction<Drop>
+  setFilter: SetFilterFunction<T>
 }
 
-export default function StringFilter({ key, placeholder, label, getField, setFilter }: StringFilterProps) {
+export default function StringFilter<T>({ key, placeholder, label, getField, setFilter }: StringFilterProps<T>) {
   const [text, setText] = useState<string>('')
 
   useEffect(() => {
     if(text) {
-      setFilter(key, (drop: Drop) => getField(drop).toLocaleLowerCase().includes(text.toLocaleLowerCase()))
+      setFilter(key, (drop: T) => getField(drop).toLocaleLowerCase().includes(text.toLocaleLowerCase()))
     }
 
     return () => {
