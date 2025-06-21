@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 
 import { Card, cards, cardTypes } from '@/helpers/cards'
 import Table, { TableColumn } from '@/components/content/Table';
@@ -8,6 +8,10 @@ import StringFilter from '@/components/filters/StringFilter';
 import OptionsFilter from '@/components/filters/OptionsFilter';
 import Link from 'next/link';
 import GuardianStar from '@/components/GuardianStar';
+
+function compareNumbers(a?: number, b?: number): number {
+  return (a == undefined ? -1 : a) - (b == undefined ? -1 : b)
+}
 
 const columns: TableColumn<Card>[] = [
   {
@@ -23,7 +27,7 @@ const columns: TableColumn<Card>[] = [
     filter: (setFilter: SetFilterFunction<Card>) => {
       return (
         <StringFilter
-          key='name'
+          field='name'
           getField={(card: Card) => card.name}
           placeholder='Card Name'
           label='Filter by Name'
@@ -40,7 +44,7 @@ const columns: TableColumn<Card>[] = [
     filter: (setFilter: SetFilterFunction<Card>) => {
       return (
         <OptionsFilter
-          key='type'
+          field='type'
           getField={(card: Card) => card.type}
           setFilter={setFilter}
           options={cardTypes}
@@ -52,25 +56,25 @@ const columns: TableColumn<Card>[] = [
     title: 'Atk',
     key: 'atk',
     field: (card) => (card.atk || card.def ? (<Tag color='red'>{card.atk}</Tag>) : null),
-    sorter: (a, b) => ( (a.atk || 0) - (b.atk || 0) ),
+    sorter: (a, b) => compareNumbers(a.atk, b.atk),
   },
   {
     title: 'Def',
     key: 'def',
     field: (card) => (card.atk || card.def ? (<Tag color='green'>{card.def}</Tag>) : null),
-    sorter: (a, b) => ( (a.def || 0) - (b.def || 0) ),
+    sorter: (a, b) => compareNumbers(a.def, b.def),
   },
   {
     title: 'Cost',
     key: 'cost',
     field: (card) => card?.cost ? <code>{card.cost.toLocaleString()}</code> : null,
-    sorter: (a, b) => ( (a.cost || 0) - (b.cost || 0) ),
+    sorter: (a, b) => compareNumbers(a.cost, b.cost),
   },
   {
     title: 'Mod Cost',
     key: 'modCost',
     field: (card) => card?.modCost ? <code>{card.modCost.toLocaleString()}</code> : null,
-    sorter: (a, b) => ( (a.modCost || 0) - (b.modCost || 0) ),
+    sorter: (a, b) => compareNumbers(a.modCost, b.modCost),
   },
   {
     title: 'Code',

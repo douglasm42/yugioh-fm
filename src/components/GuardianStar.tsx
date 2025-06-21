@@ -32,9 +32,9 @@ interface GuardianStarProps {
 
 export default function GuardianStar({ name, size, color }: GuardianStarProps) {
   const colors: Record<string, string> = {
-    none: '#eee',
-    yellow: '#e97e14',
-    red: 'red',
+    none: 'var(--color-white)',
+    yellow: 'var(--color-yellow)',
+    red: 'var(--color-red)',
   }
 
   const actualSize = size || '1.6em'

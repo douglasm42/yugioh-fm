@@ -15,9 +15,6 @@ export default function ContextMenu({ active, children, setActive }: ContextMenu
       const handleClickOutside = (event: MouseEvent) => {
         if(ref.current && !ref.current.contains(event.target as Node)) {
           setActive(false)
-          console.log('clicked outsied')
-        } else {
-          console.log('clicked inside')
         }
       }
 
@@ -28,7 +25,7 @@ export default function ContextMenu({ active, children, setActive }: ContextMenu
     }
 
     return () => {}
-  }, [ref, active])
+  }, [ref, active, setActive])
 
   return (
     <div ref={ref} className={`context-menu ${active ? 'context-menu-active' : ''}`}>

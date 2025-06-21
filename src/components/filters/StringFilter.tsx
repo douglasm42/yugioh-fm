@@ -1,31 +1,32 @@
 import { SetFilterFunction } from '@/components/content/TableFilter'
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 
 interface StringFilterProps<T> {
-  key: string
+  field: string
   getField: (drop: T) => string
   placeholder: string
   label: string
   setFilter: SetFilterFunction<T>
 }
 
-export default function StringFilter<T>({ key, placeholder, label, getField, setFilter }: StringFilterProps<T>) {
+export default function StringFilter<T>({ field, placeholder, label, getField, setFilter }: StringFilterProps<T>) {
   const [text, setText] = useState<string>('')
 
-  useEffect(() => {
+  const handleTextChange = (newText: string) => {
+    setText(newText)
     if(text) {
-      setFilter(key, (drop: T) => getField(drop).toLocaleLowerCase().includes(text.toLocaleLowerCase()))
+      setFilter(field, (drop: T) => getField(drop).toLocaleLowerCase().includes(text.toLocaleLowerCase()))
     }
 
     return () => {
-      setFilter(key, undefined)
+      setFilter(field, undefined)
     }
-  }, [text])
+  }
 
   return (
     <label>
       {label}
-      <input placeholder={placeholder} value={text} onChange={e => setText(e.target.value)} />
+      <input placeholder={placeholder} value={text} onChange={e => handleTextChange(e.target.value)} />
     </label>
   )
 }

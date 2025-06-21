@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import Pagination from './Pagination'
 import './Table.css'
 import TableSorter from './TableSorter'
@@ -18,7 +18,7 @@ interface SortColumn<T> {
 }
 
 function renderTHeadCell<T>(column: TableColumn<T>, handleSortChange: (column: TableColumn<T>) => void, sortColumn: SortColumn<T> | undefined, setFilter: SetFilterFunction<T> ): React.ReactNode {
-  let controls = []
+  const controls = []
   if(column.sorter) {
     controls.push(
       <TableSorter key='sorter' ascending={sortColumn?.column.key == column.key ? sortColumn.ascending : undefined } onClick={() => handleSortChange(column)} />
@@ -74,7 +74,6 @@ interface TableProps<T> {
 
 export default function Table<T>({ columns, records, recordKey, pageSize }: TableProps<T>) {
   const [currentPage, setCurrentPage] = useState<number>(0)
-  const [recordsPage, setRecordsPage] = useState<T[]>([])
   const [sortColumn, setSortColumn] = useState<SortColumn<T> | undefined>(undefined)
   const [filters, setFilters] = useState<Record<string, (record: T) => boolean>>({})
 
@@ -102,13 +101,8 @@ export default function Table<T>({ columns, records, recordKey, pageSize }: Tabl
     return Object.values(filters).every( f => f(record))
   }
 
-  useEffect(() => {
-    let sortedRecords = sortRecords(records.filter(passAllFilters))
-
-    setRecordsPage(pageSize ? sortedRecords.slice(pageSize * currentPage, pageSize * currentPage + pageSize) : sortedRecords)
-
-    return () => {}
-  }, [currentPage, records.length, sortColumn, filters])
+  const sortedAndFiltered = sortRecords(records.filter(passAllFilters))
+  const recordsPage = pageSize ? sortedAndFiltered.slice(pageSize * currentPage, pageSize * currentPage + pageSize) : sortedAndFiltered
 
   const handlePageChange = (page: number) => {
     setCurrentPage(page)
@@ -131,7 +125,7 @@ export default function Table<T>({ columns, records, recordKey, pageSize }: Tabl
   const rows = recordsPage.map( record => renderTBodyRow(record, columns, recordKey) )
 
   const pagination = pageSize ? (
-    <Pagination pageSize={pageSize} totalRecords={records.length} currentPage={currentPage} onPageChange={handlePageChange} />
+    <Pagination pageSize={pageSize} totalRecords={sortedAndFiltered.length} currentPage={currentPage} onPageChange={handlePageChange} />
   ) : null
 
   return (

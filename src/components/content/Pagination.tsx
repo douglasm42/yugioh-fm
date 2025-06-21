@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import './Pagination.css'
 
 interface PaginationProps {
@@ -29,8 +29,8 @@ export default function Pagination({ pageSize, totalRecords, currentPage, onPage
     const lastPage = totalPages - 1
     const pageButtons = []
 
-    let firstVisibleButton = Math.max(currentPage - 2, 0)
-    let lastVisibleButton = Math.min(currentPage + 2, lastPage)
+    const firstVisibleButton = Math.max(currentPage - 2, 0)
+    const lastVisibleButton = Math.min(currentPage + 2, lastPage)
 
     // Add previous button
     if(currentPage > 0) {

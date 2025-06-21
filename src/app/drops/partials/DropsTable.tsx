@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 
 import { Drop, drops, duelists, ratings, types } from '@/helpers/drops'
 import Table, { TableColumn } from '@/components/content/Table';
@@ -26,7 +26,7 @@ const columns: TableColumn<Drop>[] = [
     filter: (setFilter: SetFilterFunction<Drop>) => {
       return (
         <OptionsFilter
-          key='rating'
+          field='rating'
           getField={(drop: Drop) => drop.rating}
           setFilter={setFilter}
           options={ratings}
@@ -42,7 +42,7 @@ const columns: TableColumn<Drop>[] = [
     filter: (setFilter: SetFilterFunction<Drop>) => {
       return (
         <OptionsFilter
-          key='duelist'
+          field='duelist'
           getField={(drop: Drop) => drop.duelist}
           setFilter={setFilter}
           options={duelists}
@@ -58,7 +58,7 @@ const columns: TableColumn<Drop>[] = [
     filter: (setFilter: SetFilterFunction<Drop>) => {
       return (
         <StringFilter
-          key='name'
+          field='name'
           getField={(drop: Drop) => drop.name}
           placeholder='Card Name'
           label='Filter by Name'
@@ -75,7 +75,7 @@ const columns: TableColumn<Drop>[] = [
     filter: (setFilter: SetFilterFunction<Drop>) => {
       return (
         <OptionsFilter
-          key='type'
+          field='type'
           getField={(drop: Drop) => drop.type}
           setFilter={setFilter}
           options={types}
@@ -87,26 +87,24 @@ const columns: TableColumn<Drop>[] = [
     title: 'Atk',
     key: 'atk',
     field: (record) => (record.atk || record.def ? (<Tag color='red'>{record.atk}</Tag>) : null),
-    sorter: (a, b) => ( (a.atk || 0) - (b.atk || 0) ),
+    sorter: (a, b) => ( (a.atk || -1) - (b.atk || -1) ),
   },
   {
     title: 'Def',
     key: 'def',
     field: (record) => (record.atk || record.def ? (<Tag color='green'>{record.def}</Tag>) : null),
-    sorter: (a, b) => ( (a.def || 0) - (b.def || 0) ),
+    sorter: (a, b) => ( (a.def || -1) - (b.def || -1) ),
   },
   {
     title: 'Chance',
     key: 'chance',
     field: (record) => record.chance,
-    sorter: (a, b) => ( (a.chance || 0) - (b.chance || 0) ),
+    sorter: (a, b) => ( (a.chance || -1) - (b.chance || -1) ),
   },
 ];
 
 export default function DropsTable() {
-  let list = drops
-
   return (
-    <Table<Drop> records={list} columns={columns} recordKey={record => record.id} pageSize={30} />
+    <Table<Drop> records={drops} columns={columns} recordKey={record => record.id} pageSize={30} />
   )
 }
